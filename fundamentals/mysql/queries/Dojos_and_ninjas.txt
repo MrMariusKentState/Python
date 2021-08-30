@@ -1,0 +1,82 @@
+
+USE dojos_and_ninjas_schema;
+INSERT INTO dojos (name, created_at, updated_at)
+	VALUES
+		("Cobra Kai", NOW(), NOW()),
+        	("Miyagi Do", NOW(), NOW()),
+        	("Eagle Fang", NOW(), NOW());
+
+SELECT * FROM dojos
+
+DELETE FROM dojos WHERE id > 0;
+
+INSERT INTO dojos (name, created_at, updated_at)
+	VALUES
+
+		("Shotokan", NOW(), NOW()),
+        	("Ju Jitsu", NOW(), NOW()),
+        	("Taekwondo", NOW(), NOW());
+
+
+INSERT INTO ninjas (first_name, last_name, age, created_at, updated_at, dojo_id)
+	VALUES
+
+		("Paul","Betten",35, NOW(), NOW(), 4),
+		("Rich", "Lell", 42, NOW(), NOW(), 4),
+		("Egle", "Angelika", 40, NOW(), NOW(), 4);
+
+
+
+USE dojos_and_ninjas_schema;
+SELECT * FROM ninjas
+JOIN dojos ON dojos.id = ninjas.dojo_id
+
+INSERT ninjas (first_name, last_name, age, created_at, updated_at, dojo_id)
+	VALUES
+
+		("Daniel","LaRusso",51, NOW(), NOW(), 5),
+		("Johnny", "Lawrence", 50, NOW(), NOW(),5),
+		("Mr.", "Miyagi", 100, NOW(), NOW(),5);
+
+
+USE dojos_and_ninjas_schema;
+SELECT * FROM ninjas
+JOIN dojos ON dojos.id = ninjas.dojo_id
+
+
+INSERT ninjas (first_name, last_name, age, created_at, updated_at, dojo_id)
+	VALUES
+
+		("John","Kreese",51, NOW(), NOW(), 6),
+		("Terry", "Silver", 50, NOW(), NOW(),6),
+		("Mike", "Barnes", 100, NOW(), NOW(),6);
+
+
+USE dojos_and_ninjas_schema;
+SELECT * FROM ninjas
+JOIN dojos ON dojos.id = ninjas.dojo_id
+
+
+
+USE dojos_and_ninjas_schema;
+SELECT name AS dojo, first_name, last_name FROM dojos
+JOIN ninjas ON dojos.id = ninjas.dojo_id
+WHERE dojos.id = 4
+
+
+
+
+USE dojos_and_ninjas_schema;
+SELECT name AS dojo, first_name, last_name FROM dojos
+JOIN ninjas ON dojos.id = ninjas.dojo_id
+WHERE dojos.id = 6
+
+
+
+USE dojos_and_ninjas_schema;
+SELECT name AS dojo FROM dojos
+JOIN ninjas ON dojos.id = ninjas.dojo_id
+WHERE ninjas.id = 18
+
+
+

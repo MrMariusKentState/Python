@@ -1,0 +1,48 @@
+
+
+1.) USE world;
+SELECT name, Language, Percentage
+FROM country
+	INNER JOIN countrylanguage
+	WHERE country.code = countrylanguage.CountryCode AND Language = "Slovene"
+    	ORDER BY Percentage DESC;
+
+
+2.) USE world;
+SELECT COUNT(city.Name), country.name
+ FROM CITY
+	INNER JOIN country
+	WHERE city.CountryCode = country.Code
+	GROUP BY country.name
+    	ORDER BY COUNT(city.Name) DESC;
+
+
+3.) USE world;
+SELECT * from city WHERE CountryCode = "MEX" AND Population > 500000
+ORDER BY Population desc;
+
+
+4.) USE world;
+SELECT * FROM countrylanguage WHERE Percentage > 89 ORDER BY Percentage DESC;
+
+5.) USE world;
+SELECT * FROM country where SurfaceArea < 501 AND Population > 100000
+
+6.) USE world;
+SELECT * FROM country where GovernmentForm = "Constitutional Monarchy" AND Capital > 75 AND LifeExpectancy > 75
+
+
+7.)USE world;
+SELECT country.name as Country_name, city.name AS City_name, District, city.Population as City_population
+ FROM CITY
+ INNER JOIN country
+	WHERE city.CountryCode = country.Code AND country.name = "Argentina" AND District = "Buenos Aires" AND city.population > 500000
+
+
+
+8.) USE world;
+SELECT COUNT(Name), Region
+FROM country
+GROUP BY Region
+ORDER BY COUNT(Name) DESC;
+
